@@ -21,6 +21,9 @@ args = parser.parse_args()
 
 if args.gpu:
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+else:
+    device = torch.device("cpu")
+    
 
 
 #Open the file with category names
