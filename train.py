@@ -79,7 +79,8 @@ optimizer = optim.Adam(model.classifier.parameters(),lr=args.learning_rate)
 
 if args.gpu:
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model.to(device)
+else:
+    device = torch.device("cpu")
 
 
 epochs = args.epochs
